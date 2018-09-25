@@ -11,7 +11,7 @@ local povdata "D:\Google Drive\ougniProjects\povertyThresholds\data"
 cd "$raw"
 
 
-forvalues i =1980/2016 {
+forvalues i =2016/2017 {
 clear
 local l2 = substr("`i'",3,.)
 di `l2'
@@ -42,10 +42,12 @@ replace hiuNumber = 2 in 3/4
 replace hiuNumber = 1 in 1/2 
 
 ge float under65age =.
-replace under65age =1 in 1 
+replace under65age =1 in 1
+replace under65age =0 in 2 
 
 ge float under65head =.
 replace under65head=1 in 3
+replace under65head=0 in 4
 
 rename c chx0 
 rename d chx1 
