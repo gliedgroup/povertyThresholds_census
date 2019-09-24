@@ -3,19 +3,15 @@
 clear
 set more off
 
-global raw "D:\Google Drive\ougniProjects\skunkWorks\povertyThresholds_census\data\raw"
-global out "D:\Google Drive\ougniProjects\skunkWorks\povertyThresholds_census\data\stata_yearly"
-global final "D:\Google Drive\ougniProjects\skunkWorks\povertyThresholds_census"
-local povdata "D:\Google Drive\ougniProjects\povertyThresholds\data"
 
-cd "$raw"
+local startyear = 1980
+local endyear = 2018
 
-
-forvalues i =2016/2017 {
+forvalues i = `startyear'/`endyear' {
 clear
 local l2 = substr("`i'",3,.)
 di `l2'
-import excel thresh`l2'
+import excel data/raw/thresh`l2'
 rename  *, lower 
 
 ge float year=`i'
@@ -75,15 +71,15 @@ recast float chilNum
 ge year=`i'
 
 desc
-save "$out\povThres`i'", replace
+save "data/stata_yearly/povThres`i'", replace
 }
 
 // append them into one file 
 
-use "$out\povThres1980"
+use "data/stata_yearly/povThres`startyear'", clear
 
-forvalues k = 1981/2016{
-append using "$out\povThres`k'" 
+forvalues k = `startyear'/`endyear'{
+append using "data/stata_yearly/povThres`k'" 
 }
 
-save "$final\povThres_census_1980_2016", replace
+save "data/povThres_census_`startyear'_`endyear'", replace
