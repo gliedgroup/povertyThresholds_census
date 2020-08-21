@@ -1,10 +1,10 @@
 // purpose: process rawthresholds from census automatically
-
+// change the start and end year to be 2018 _ ben 8/21/2020
 clear
 set more off
 
 
-local startyear = 1980
+local startyear = 2018
 local endyear = 2018
 
 forvalues i = `startyear'/`endyear' {
