@@ -1,11 +1,12 @@
 // purpose: process rawthresholds from census automatically
 // change the start and end year to be 2018 _ ben 8/21/2020
+// modified by Dong to change the start 2020 and end 2021 9/23/2022.
 clear
 set more off
 
 
-local startyear = 2018
-local endyear = 2018
+local startyear = 2021
+local endyear = 2021
 
 forvalues i = `startyear'/`endyear' {
 clear
@@ -71,15 +72,15 @@ recast float chilNum
 ge year=`i'
 
 desc
-save "data/stata_yearly/povThres`i'", replace
+save "C:\Users\dd1774\Documents\GitHub\povertyThresholds_census\data\stata_yearly\povThres`i'", replace
 }
 
 // append them into one file 
 
-use "data/stata_yearly/povThres`startyear'", clear
+*use "data/stata_yearly/povThres`startyear'", clear
 
-forvalues k = `startyear'/`endyear'{
-append using "data/stata_yearly/povThres`k'" 
-}
+*forvalues k = `startyear'/`endyear'{
+*append using "data/stata_yearly/povThres`k'" 
+*}
 
-save "data/povThres_census_`startyear'_`endyear'", replace
+*save "data/povThres_census_`startyear'_`endyear'", replace
