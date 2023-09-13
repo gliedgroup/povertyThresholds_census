@@ -4,7 +4,7 @@ This project generates poverty thresholds using Census Bureau Guidelines. Origin
 
 __What this project contains:__ 
 - yearly(from 1980 to 2022) poverty thresholds by family size and number of childrens in stata format
-- an appended stata dataset of poverty thresholds from 1980 to 2016 
+- an appended stata dataset of poverty thresholds from 1980 to 2022 
 - `povertyGenerator.do` : this can be modified to incorporate more years, this file reads raw `excel` files provided by Census and creates the yearly and aggregate thresholds. 
 
 __How these stata files can be used:__ 
