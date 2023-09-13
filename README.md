@@ -3,7 +3,7 @@
 This project generates poverty thresholds using Census Bureau Guidelines. Original Census files can be found [here](https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-poverty-thresholds.html). I used the files for thresholds by Size of Family and Number of Childrens only.
 
 __What this project contains:__ 
-- yearly(from 1980 to 2016) poverty thresholds by family size and number of childrens in stata format
+- yearly(from 1980 to 2022) poverty thresholds by family size and number of childrens in stata format
 - an appended stata dataset of poverty thresholds from 1980 to 2016 
 - `povertyGenerator.do` : this can be modified to incorporate more years, this file reads raw `excel` files provided by Census and creates the yearly and aggregate thresholds. 
 
