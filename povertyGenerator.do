@@ -1,18 +1,19 @@
 // purpose: process rawthresholds from census automatically
 // change the start and end year to be 2018 _ ben 8/21/2020
 // modified by Dong to change the start 2020 and end 2021 9/23/2022.
+// modified by Dong to change the start 2021 and end 2022 9/23/2023.
 clear
 set more off
 
 
 local startyear = 2021
-local endyear = 2021
+local endyear = 2022
 
 forvalues i = `startyear'/`endyear' {
 clear
 local l2 = substr("`i'",3,.)
 di `l2'
-import excel data/raw/thresh`l2'
+import excel "C:\Users\dd1774\Documents\GitHub\povertyThresholds_census\data\raw\thresh`l2'", sheet("Sheet1")
 rename  *, lower 
 
 ge float year=`i'
