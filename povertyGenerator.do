@@ -1,13 +1,14 @@
 // purpose: process rawthresholds from census automatically
 // change the start and end year to be 2018 _ ben 8/21/2020
 // modified by Dong to change the start 2020 and end 2021 9/23/2022.
-// modified by Dong to change the start 2021 and end 2022 9/23/2023.
+// modified by Dong to change the start 2021 and end 2022 9/23/2023
+// modified by Dong to change the start 2022 and end 2023 9/18/2024.
 clear
 set more off
 
 
-local startyear = 2021
-local endyear = 2022
+local startyear = 2023
+local endyear = 2023
 
 forvalues i = `startyear'/`endyear' {
 clear
